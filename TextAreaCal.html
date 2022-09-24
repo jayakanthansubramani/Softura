@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    <form>
+        <div>
+            <label>Number 1</label>
+            <input type="text" id="txt1" onkeyup="addTwoNumbers()" />
+            <br />
+            <label>Number 2</label>
+            <input type="text" id="txt2" onkeyup="addTwoNumbers()" />
+            <br />
+            <label>Number 3</label>
+            <input type="text" id="txt3" onkeyup="addTwoNumbers()" />
+            <br />
+            <label>Number 4</label>
+            <input type="text" id="txt4" onkeyup="addTwoNumbers()" />
+            <br />
+            <label>Number 5</label>
+            <input type="text" id="txt5" onkeyup="addTwoNumbers()" />
+            <br />
+            <label id="res">Result</label>
+        </div>
+    </form>
+    <script>
+        $(document).ready(function () {
+            addTwoNumbers();
+        });
+        function addTwoNumbers() {
+            var n1 = $('#txt1').val();
+            if (!n1) {
+                n1 = 0;
+            }
+            var n2 = $('#txt2').val();
+            if (!n2) {
+                n2 = 0;
+            }
+            var n3 = $('#txt3').val();
+            if (!n3) {
+                n3 = 0;
+            }
+            var n4 = $('#txt4').val();
+            if (!n4) {
+                n4 = 0;
+            }
+            var n5 = $('#txt5').val();
+            if (!n5) {
+                n5 = 0;
+            }
+            sum = Number(n1) + Number(n2) + Number(n3) + Number(n4) + Number(n5);
+            $('#res').html(sum);
+        }
+    </script>
+</body>
+</html>
