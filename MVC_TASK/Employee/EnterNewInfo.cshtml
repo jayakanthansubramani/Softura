@@ -1,0 +1,27 @@
+﻿@model IEnumerable< SampleApp.Models.Employee>
+@*
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Single Employee Info";
+}
+<p>
+    <a asp-action="details" asp-controller="Student">Enter New Employee Details</a>
+</p>
+
+<form>
+    <label for="empid">EmployeeId:</label>
+    <input type="number" id="eid" name="fname"><br><br>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="fname"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="lname"><br><br>
+    <label for="gender">Gender:</label>
+    <input type="text" id="gen" name="gen"><br><br>
+    <label for="city">City:</label>
+    <input type="text" id="cit" name="cit"><br><br>
+    <input type="submit" value="Submit">
+
+</form>
