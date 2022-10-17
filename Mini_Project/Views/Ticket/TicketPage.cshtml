@@ -1,0 +1,29 @@
+﻿@model IEnumerable<AirlineReservationWeb.Models.Flight>
+@{
+    ViewData["Title"] = "TicketPage";
+}
+
+
+<h1>TicketPage</h1>
+<table class="table">
+    <tr>
+        <th>Ticket_id</th>
+        <th>AirlineName</th>
+        <th>FromLocation</th>
+        <th>ToLocation</th>
+        <th>ArrivalTime</th>
+    </tr>
+    <tr>
+        <td>#10203</td>
+        <td>Air Asia</td>
+        <td>Chennai</td>
+        <td>Mumbai</td>
+        <td>2022-10-17 12:30:30</td>
+        <td>
+            <form asp-action="CancelPage" asp-controller="Cancel">
+                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Cancel Ticket</button>
+            </form>
+
+        </td>
+    
+</table>

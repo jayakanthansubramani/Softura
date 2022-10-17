@@ -1,0 +1,91 @@
+﻿@model IEnumerable<AirlineReservationWeb.Models.Flight>
+
+@{
+    ViewData["Title"] = "FlightPage";
+}
+
+<h1>FlightPage</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<div class="container p-3">
+    <div class="row pt-4">
+      
+            <h2 class="text-primary">FROM</h2><input class="form-control me-sm-2" type="text" placeholder="Search">
+            <br />
+            <h2 class="text-primary">TO</h2><input class="form-control me-sm-2" type="text" placeholder="Search">
+        <br />
+        <label for="date" class="text-primary">Date</label>
+            <input class="form-control me-sm-2" type="date" id="datetoenter" name="birthday">
+        <br />
+        <form class="d-flex">
+            <br />
+            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <br />
+
+    </div>
+
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AirlineName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FromLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ToLocation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DepartureTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ArrivalTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalSeats)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    @Html.DisplayFor(modelItem => item.AirlineName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FromLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ToLocation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DepartureTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalSeats)
+            </td>
+            <td>
+                <form asp-action="PaymentPage" asp-controller="Payment">                    
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Book Now</button>
+                </form>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
